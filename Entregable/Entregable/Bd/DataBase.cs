@@ -21,6 +21,7 @@ namespace Entregable.Bd
             _database.CreateTableAsync<UserModel>().Wait();
             _database.CreateTableAsync<ServicioModel>().Wait();
             _database.CreateTableAsync<RepuestoModel>().Wait();
+            _database.CreateTableAsync<GruaModel>().Wait();
         }
 
         #region Crud

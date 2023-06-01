@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entregable.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Entregable.View
 		public Mecanica ()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = new ServicioViewModel();
+        }
 	}
 }

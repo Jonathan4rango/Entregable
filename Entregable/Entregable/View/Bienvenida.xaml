@@ -2,14 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Entregable.Bienvenida">
-        
+
+
     <ContentPage.Content>
         <StackLayout>
-           
-            <Label Text="Mi página de inicio"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="¿ Quieres logearte ?, da clik aqui!" x:Name="Btn_login" Clicked="Btn_login_Clicked" />
+
+            
+            <Button Text="¿ Quieres logearte ?, da clik aqui!" Command="{Binding LoginCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

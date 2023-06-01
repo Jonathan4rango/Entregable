@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Entregable.ViewModel
+namespace AgendaMVVM.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
@@ -45,7 +45,5 @@ namespace Entregable.ViewModel
             }
 
         }
-
-
     }
 }

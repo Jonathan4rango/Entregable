@@ -6,6 +6,7 @@
         <ScrollView>
             <Grid>
                 <Grid.ColumnDefinitions>
+                 
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -17,16 +18,18 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
                 <Label Text="Registro" Grid.Column="0" Grid.Row="0" />
-                <Entry Placeholder="Nombre" Grid.Column="0" Grid.Row="1" />
-                <Entry Placeholder="Apellido" Grid.Column="0" Grid.Row="2" />
-                <Entry Placeholder="Correo" Grid.Column="0" Grid.Row="3" />
-                <Entry Placeholder="Contraseña" Grid.Column="0" Grid.Row="4" />
-                <Entry Placeholder="Teléfono" Grid.Column="0" Grid.Row="5" />
-                <Entry Placeholder="Usuario" Grid.Column="0" Grid.Row="6" />
-                <Button Text="Registrar" Grid.Column="0" Grid.Row="7" />
+                <Entry Placeholder="Nombre" Text="{Binding nombreTxt, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" />
+                <Entry Placeholder="Apellido" Text="{Binding ApeTxt, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" />
+                <Entry Placeholder="Cedula" Grid.Column="0" Text="{Binding CedulaTxt, Mode=TwoWay}" Grid.Row="3" />
+                <Entry Placeholder="Correo" Keyboard="Email" Grid.Column="0" Text="{Binding CorreoTxt, Mode=TwoWay}" Grid.Row="4" />
+                <Entry Placeholder="Contraseña" Text="{Binding ContraseTxt, Mode=TwoWay}" Grid.Column="0"  Grid.Row="5" IsPassword="True" />
+                <Entry Placeholder="Teléfono" Keyboard="Telephone" Text="{Binding TelTxt, Mode=TwoWay}" Grid.Column="0" Grid.Row="6" />
+                <Entry Placeholder="Usuario" Text="{Binding LoginUserTxt, Mode=TwoWay}" Grid.Column="0" Grid.Row="7" />
+                <Button Text="Registrar" Command="{Binding RegistrarseCommand}"  Grid.Column="0" Grid.Row="8" />
             </Grid>
         </ScrollView>
        

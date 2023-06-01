@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Entregable.View.Repuestos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="0" >
+                    <Label Text="Compra repuestos" Margin="0,150,0,0"/>
+                    <Entry Placeholder="Nombre producto" Margin="40,60,40,0" Text="{Binding NombrePTxt, Mode=TwoWay}" />
+                    <Entry Placeholder="Valor" Text="{Binding ValorPTxt, Mode=TwoWay}" Keyboard="Numeric" />
+                    <Entry Placeholder="Cantidad" Text="{Binding CatidadTxt, Mode=TwoWay}" Keyboard="Numeric" />
+                    <Button Text="Comprar" Command="{Binding IngresarRCommand}" />
+                </StackLayout>
+               
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

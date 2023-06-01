@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Entregable.View.Servicio">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+            </Grid>
+            <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Center">
+                <Label Text="Solicitar servicio de mecanica" Margin="0,50,0,0"  />
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Seleccione la fecha" Margin="0,50,0,0" />
+                    <Entry Placeholder="Fecha DD/M/A" Text="{Binding Fechatxt, Mode=TwoWay, StringFormat='{0:dd MM yyyy}'} "/>
+                    <Entry Placeholder="Dirección" Text="{Binding DirTxt, Mode=TwoWay}" />
+                    <Label Text="Seleccione la hora" />
+                    <Entry Placeholder="12:00" Text="{Binding HoraTxt, Mode=TwoWay}" /> 
+                </StackLayout>
+                <Button Text="Solicitar" Command="{Binding GuardarServicioCommand}" />
+            </StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10,0,0,0">
+                    <Label  Text="Número del servicio" FontSize="15" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                
+                    <Label  Text="Fecha del servicio" FontSize="15" />
+                </StackLayout>
+                    
+                <StackLayout Grid.Column="2" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+                        <Label  Text="Dirección del servicio" FontSize="15" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="3" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+                            <Label  Text="Hora del servicio" FontSize="15" />
+                    </StackLayout>
+
+            </Grid>
+
+
+            <StackLayout>
+                <ListView x:Name="ListV"
+                          SeparatorVisibility="None"
+                          HasUnevenRows="True"
+                          ItemSelected="ListV_ItemSelected"
+                          IsRefreshing="False"
+                          IsPullToRefreshEnabled="True"
+                          SeparatorColor="Black"
+                          ItemsSource="{Binding ListViewSoure}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    
+
+                                    <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal">                                        
+                                        <Label  Text="{Binding IdServicio}" FontSize="15"  />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="2" Grid.Row="0" Orientation="Horizontal">
+                                        
+                                        <Label Text="{Binding FechaServicio}" FontSize="15" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="3" Grid.Row="0" Orientation="Horizontal">
+                                      
+                                        <Label Text="{Binding Dire}" FontSize="15" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="4" Grid.Row="0" Orientation="Horizontal">
+                                     
+                                        <Label Text="{Binding HoraServicio}" FontSize="15"  />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+
+                                        <Label Text="" FontSize="15"  />
+                                    </StackLayout>
+                                    
+                                </Grid>
+                               
+                            </ViewCell>                              
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

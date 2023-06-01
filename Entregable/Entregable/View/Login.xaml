@@ -3,25 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Entregable.Login">
     <ContentPage.Content>
-       
-            <Grid>
+
+        <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
-                    <RowDefinition Height="100" />
                     <RowDefinition Height="80" />
-                    <RowDefinition Height="300" />
-                </Grid.RowDefinitions>
-         
-       
-            <Label Text="Login" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" />
-            <Entry Placeholder="Usuario" Grid.Column="0" Grid.Row="1" x:Name="EnUser" VerticalOptions="Center" />
-            <Entry Placeholder="Contraseña" Grid.Column="0" Grid.Row="2" x:Name="EnCont" VerticalOptions="Center"/>
-            <Button  Text="Desea registrarse, da clik aqui" x:Name="Btn_Registro"
-                     Clicked="Btn_Registro_Clicked" Grid.Column="0" 
-                     Grid.Row="3" VerticalOptions="End"/>
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="*" />
+               
+            </Grid.RowDefinitions>
+
+            <Image  Margin="0,120,0,10" HeightRequest="90" WidthRequest="90" Source="mecanico.png" Grid.Column="0"
+                    Grid.Row="0"/>
+            <Label Text="Mecanica" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" />
+            <Entry Placeholder="Usuario" Text="{Binding UsurioTxt, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" x:Name="EnUser" VerticalOptions="Center" 
+                    />
+            <Entry Placeholder="Contraseña"  IsPassword="True" Text="{Binding ContraTxt, Mode=TwoWay}" Grid.Column="0" Grid.Row="2" x:Name="EnCont" VerticalOptions="Center"
+                   />
+
+            <StackLayout Grid.Column="0" Grid.Row="3" VerticalOptions="End" >
+                <Button Text="Ingresar" Command="{Binding IngresarCommand}"  />
+                <Button  Text="Desea registrarse, da clik aqui" Command="{Binding RegistrarCommand}" />
+            </StackLayout>
+            
+          
+            
 
 
         </Grid>

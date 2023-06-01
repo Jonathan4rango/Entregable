@@ -8,19 +8,17 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Entregable
+namespace Entregable.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Bienvenida : ContentPage
+    public partial class Princmain : TabbedPage
     {
+        public Princmain()
 
-        public Bienvenida()
         {
+            
             InitializeComponent();
-            BindingContext = new UserViewModel();
-
+           
         }
-
-    
     }
 }

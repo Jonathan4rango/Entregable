@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Entregable.View.Taller"
+             Title="TALLER"
+             IconImageSource="taller.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                   
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="1" >
+                    <Button Text="Solicitar servicio de mecanica" HeightRequest="100" WidthRequest="100" Margin="20,0,20,50" CornerRadius="20"
+                            Command="{Binding SolicitarSerCommand}"/>
+                    <Button Text="Repuestos" HeightRequest="100" WidthRequest="100" Margin="20,-40,20,0"  CornerRadius="20"
+                             Command="{Binding RepuestosCommand}"/>
+                </StackLayout>
+                
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
